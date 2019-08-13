@@ -1,18 +1,18 @@
-Bug 11290£º
+Bug 11290ï¼š
 $("element[attribute='<img src=x onerror=alert(666)>'")
 
-Bug 9521£º
+Bug 9521ï¼š
 $("<img src=1 onerror=confirm('xss');>")
 $("<img src=x onerror=alert('xss');>")
 
 issue 2432:
 $.get('http://sakurity.com/jqueryxss')
 
-ĞŞ¸´½¨Òé
-1¡¢Éı¼¶jquery°æ±¾ÖÁ×îĞÂ¡£
-2¡¢Ê¹ÓÃÈ«¾Ö¹ıÂË£¬¹ıÂËÌØÊâ×Ö·û¡£
-3¡¢²Î¿¼https://github.com/MrWQ/jquery_xss_repair/upload/master
-4¡¢²Î¿¼ĞŞ¸´´úÂë
+ä¿®å¤å»ºè®®
+1ã€å‡çº§jqueryç‰ˆæœ¬è‡³æœ€æ–°ã€‚
+2ã€ä½¿ç”¨å…¨å±€è¿‡æ»¤ï¼Œè¿‡æ»¤ç‰¹æ®Šå­—ç¬¦ã€‚
+3ã€å‚è€ƒé“¾æ¥https://github.com/MrWQ/jquery_xss_repair
+4ã€å‚è€ƒä¿®å¤ä»£ç 
 /**
  * Find a node by ID.
  *
